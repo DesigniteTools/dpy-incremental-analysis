@@ -31,7 +31,7 @@ def main(token, designite_output_old, designite_output_new, repo):
     if not _download_artifact(designite_output_old, repo, token):
         return
     # ls('/github/workspace')
-    os.rename(os.path.abspath('designite-output'), os.path.abspath(designite_output_new))
+    os.rename(os.path.abspath('dpy-output'), os.path.abspath(designite_output_new))
 
     get_new_smells(designite_output_old, designite_output_new)
     issues = Issues("new_smells.json", token=token, repo=repo).get_issues().create_issues()
